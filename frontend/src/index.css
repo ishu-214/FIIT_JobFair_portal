@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fiit-primary: #2F2D7D;
+  --fiit-rgb: 47, 45, 125;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #F8F9FD;
+    color: #1E293B;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF0FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F2D7D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1D1C52;
+}
+
+/* Anti-copy protection during assessment */
+.proctor-protected {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Fullscreen Background & Color Enforcement */
+/* Browser default for fullscreen is black; enforce #F8F9FD and #2F2D7D branding */
+:fullscreen,
+:-webkit-full-screen,
+:-moz-full-screen,
+:fullscreen * {
+  background-color: inherit;
+}
+
+html:fullscreen,
+body:fullscreen,
+#root:fullscreen,
+div:fullscreen {
+  background-color: #F8F9FD !important;
+  color: #1E293B !important;
+}
+
+:fullscreen::backdrop,
+:-webkit-full-screen::backdrop {
+  background-color: #F8F9FD !important;
+}
